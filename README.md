@@ -1,6 +1,6 @@
 # DNS
 
-## Basics 
+## Summary  
 
 >> tests.py
 - DNS query to get to IP adress of a domainName
