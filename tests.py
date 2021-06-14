@@ -12,14 +12,14 @@ n = dns.name.from_text('wikitech-static.wikimedia.org')
 try:
     while True:
         try:
-            #On envoie une requête de type NS :
+            #On envoie une requête de type A :
             answer = dns.resolver.resolve(n,'A')
         except dns.resolver.NoAnswer:
             #On a pas trouvé d'enregistrement, on ignore l'exception et on continue
-            print("Aucun enregistrement NS trouvé pour "+n.to_text()+", tentative avec le parent.")
+            print("Aucun enregistrement A trouvé pour "+n.to_text()+", tentative avec le parent.")
         else:
-            #Aucune exception levée, on a trouvé un enregistrement NS
-            print("Enregistrement NS trouvé pour le domaine "+n.to_text()+" :")
+            #Aucune exception levée, on a trouvé un enregistrement A
+            print("Enregistrement A trouvé pour le domaine "+n.to_text()+" :")
 
             for rdata in answer:
                 print(rdata.to_text())
